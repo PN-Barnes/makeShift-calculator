@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.calculatorShell {
+  padding: 20px;
+  width: 300px;
+  background-color: grey;
+  border-radius: 15px;
+}
+
+.screen {
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: end;
+  width: 75%;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+.buttonsDiv {
+  text-align: center;
+  margin: auto;
+  width: 90%;
+}
+
+.button {
+  font-size: 48px;
+  border-radius: 15%;
+  height: 50px;
+  width: 50px;
+  margin: 4px;
+}
+
+.clearDiv {
+  text-align: center;
+}
+.clear {
+  align-items: center;
+  font-size: 48px;
+  border-radius: 15px;
+  width: 35%;
+}

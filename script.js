@@ -14,7 +14,7 @@ allClear.addEventListener('click', (event) => {
 buttons.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
     const button = event.target.innerHTML;
-    if (isNaN(button)) {
+    if (isNaN(button) && button !== '=') {
       operator = button;
       console.log(operator);
     } else {

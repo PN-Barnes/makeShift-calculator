@@ -17,8 +17,8 @@ allClear.addEventListener('click', (event) => {
 });
 buttons.addEventListener('click', (event) => {
   const button = event.target.innerHTML;
-  if (button !== '=') {
-    if (isNaN(button)) {
+  if (button !== '=' && button) {
+    if (isNaN(button) && button !== '.') {
       operatorEvent(button);
     } else {
       numberEvent(button);
@@ -28,6 +28,7 @@ buttons.addEventListener('click', (event) => {
     if (numbers.length < 2) {
       console.log('2 check');
       numbers.push(screen.innerHTML);
+      console.log(numbers);
       return calculation(numbers, operator);
     } else {
       console.log('return 1');

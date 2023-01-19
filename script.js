@@ -15,9 +15,10 @@ allClear.addEventListener('click', (event) => {
   screen.innerHTML = '';
   operator = null;
 });
+
 buttons.addEventListener('click', (event) => {
   const button = event.target.innerHTML;
-  if (button !== '=' && button) {
+  if (button !== '=') {
     if (isNaN(button) && button !== '.') {
       operatorEvent(button);
     } else {
@@ -55,6 +56,7 @@ const calculation = (numbers, operator) => {
       break;
   }
 };
+
 const numberEvent = (button) => {
   console.log(button);
   screen.innerHTML += button;

@@ -24,21 +24,51 @@ buttons.addEventListener('click', (event) => {
       numberEvent(button);
     }
   } else {
-    if (numbers.length === 2) {
-      screen.innerHTML = numbers[0] + operator + numbers[1];
+    console.log(numbers.length);
+    if (numbers.length < 2) {
+      console.log('2 check');
+      numbers.push(screen.innerHTML);
+      return calculation(numbers, operator);
     } else {
+      console.log('return 1');
       screen.innerHTML = numbers[0];
     }
   }
 });
 
+const calculation = (numbers, operator) => {
+  switch (operator) {
+    case '+':
+      screen.innerHTML = numbers[0] + numbers[1];
+      break;
+    case '-':
+      screen.innerHTML = numbers[0] - numbers[1];
+      break;
+    case '*':
+      screen.innerHTML = numbers[0] * numbers[1];
+      break;
+    case '/':
+      screen.innerHTML = numbers[0] / numbers[1];
+      break;
+    default:
+      break;
+  }
+};
 const numberEvent = (button) => {
   console.log(button);
   screen.innerHTML += button;
 };
 const operatorEvent = (button) => {
-  numbers.push(screen.innerHTML);
-  console.log(numbers);
-  operator = button;
-  screen.innerHTML = '';
+  if (checkButton(operatorArr, button)) {
+    numbers.push(screen.innerHTML);
+    console.log(numbers);
+    operator = button;
+    screen.innerHTML = '';
+  } else {
+    return;
+  }
+};
+
+const checkButton = (checkArr, clicked) => {
+  return checkArr.includes(clicked);
 };

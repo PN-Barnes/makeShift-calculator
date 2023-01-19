@@ -25,14 +25,10 @@ buttons.addEventListener('click', (event) => {
       numberEvent(button);
     }
   } else {
-    console.log(numbers.length);
     if (numbers.length < 2) {
-      console.log('2 check');
       numbers.push(screen.innerHTML);
-      console.log(numbers);
       return calculation(numbers, operator);
     } else {
-      console.log('return 1');
       screen.innerHTML = numbers[0];
     }
   }
@@ -58,13 +54,11 @@ const calculation = (numbers, operator) => {
 };
 
 const numberEvent = (button) => {
-  console.log(button);
   screen.innerHTML += button;
 };
 const operatorEvent = (button) => {
   if (checkButton(operatorArr, button)) {
     numbers.push(screen.innerHTML);
-    console.log(numbers);
     operator = button;
     screen.innerHTML = '';
   } else {

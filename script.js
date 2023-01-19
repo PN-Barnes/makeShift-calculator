@@ -8,7 +8,9 @@ let numbers = [];
 let result = 0;
 
 allClear.addEventListener('click', (event) => {
-  console.log(event.target.innerHTML);
+  while (numbers.length > 0) {
+    numbers.pop();
+  }
   screen.innerHTML = '';
   operator = null;
 });
@@ -19,8 +21,6 @@ buttons.addEventListener('click', (event) => {
       numbers.push(screen.innerHTML);
       operator = button;
       screen.innerHTML = '';
-      console.log(operator);
-      console.log(numbers);
     } else {
       screen.innerHTML += button;
       console.log(button);
